@@ -1,0 +1,76 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Request details</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">List of Requests</li>
+             <li class="breadcrumb-item active">Request details</li>
+          </ol>
+       </nav>
+    </div>
+
+    
+
+
+
+
+
+    <section class="section">
+       <div  class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                  
+                
+                   <h5 class="card-title">Request details</h5>
+                   <div  class="row">
+                      <div class="col-lg-3 col-md-4 label ">Name</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.user.username}}</div>
+                   </div>
+                   <p></p>
+                   <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Surname</div>
+                    <div class="col-lg-9 col-md-8">{{demandes?.user.prenom}}</div>
+                 </div>
+                 <p></p>
+                   <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Department</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.user.departement}}</div>
+                   </div>
+                   <p></p>
+                   <div  class="row">
+                      <div class="col-lg-3 col-md-4 label">Asset  date</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.date}}</div>
+                   </div>
+                   <p></p>
+                   <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Type Request</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.type_Request}}</div>
+                   </div>
+                   <p></p>
+                   <div class="row">
+                     <div class="col-lg-3 col-md-4 label">Message</div>
+                     <div class="col-lg-9 col-md-8">{{demandes?.message}}</div>
+                  </div>
+                  <div class="modal-footer"> <button *ngIf="showAdminBoard" [disabled]="demandes?.status !== 'Waiting'" type="button" (click)="OnNavigue()"  class="btn btn-primary"  > Create</button> <button  [disabled]="demandes?.status == 'Waiting'"   (click)="onVa()"   class="btn btn-primary">View</button>
+                     
+                  </div>
+                  
+                 
+               </div>
+                </div>
+             </div>
+          </div>
+       
+    </section>
+
+
+
+
+
+
+
+
+    
+ </main>

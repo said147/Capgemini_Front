@@ -1,0 +1,160 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Fiche of Departure</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Departure</li>
+             <li class="breadcrumb-item active">Request</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-6">
+             <div class="card">
+                <div class="card-body">
+                    <div> <img style="width: 290px;position: relative;margin-left: 590px;" src="assets/img/Image2.png" alt=""></div>
+                   <h5 style="text-align: center;font-family:Verdana;font-weight: 700;font-size: 22px;color: rgb(79,129,183);" class="card-title">Fiche of Departure</h5>
+                  
+                   <form [formGroup]="productform" (ngSubmit)="addDemandeDepart()" class="row g-3">
+
+            
+                      <div class="row mb-3">
+                        <label 
+
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-10 col-form-label">Nom-Prénom :
+                        <label  name="nom" style="font-family: Arial;font-size: 13px;position: relative;left: 20px;" class="col-sm-14">{{username}} {{prenom}}</label></label>
+                     </div>
+                   
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputEmail5" class="form-label">Matricule </label>  <input formControlName="matricule" name="matricule" style="font-family: Arial;font-size: 13px;" type="text" class="form-control"></div>
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputEmail5" class="form-label">Activité</label> <input formControlName="activite" name="activite" style="font-family: Arial;font-size: 13px;" type="text" class="form-control" id="inputEmail5"></div>
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputPassword5" class="form-label">Responsable hiérarchique</label> <input formControlName="resp_hier" name="resp_hier"  style="font-family: Arial;font-size: 13px;" type="text" class="form-control" id="inputPassword5"></div>
+                      
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputEmail5" class="form-label">Date d'entree</label>  <input formControlName="date_Entree" name="date_Entree" style="font-family: Arial;font-size: 13px;" type="date" class="form-control"></div>
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputPassword5" class="form-label">Date depart</label> <input formControlName="date_Depart" name="date_Depart" style="font-family: Arial;font-size: 13px;" type="date" class="form-control"></div>
+                      
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputEmail5" class="form-label">Numéro de tél. personnel</label>  <input formControlName="tel_perso" name="tel_perso" style="font-family: Arial;font-size: 13px;" type="tel" class="form-control"></div>
+                      <div class="col-md-6"> <label style="font-family: Arial;font-size: 13px;" for="inputPassword5" class="form-label">E-mail personnel</label> <input formControlName="email_perso" name="email_perso" style="font-family: Arial;font-size: 13px;" type="email" class="form-control"></div>
+                     
+                   
+                      
+                   
+               
+                     
+<ng-container >
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table style=" border:2px solid rgb(186, 186, 186);border-radius: 15px;" class="table-bordered border-style">
+                    <thead>
+                        <tr >
+                            <th style="font-family: Lucida Sans Unicode;font-size: 12px;font-weight: 700;text-align: center;color: rgb(51, 204, 204);">Thème à vérifier</th>
+                            <th style="font-family: Lucida Sans Unicode;font-size: 12px;font-weight: 700;color: rgb(51, 204, 204);">OK/NOK (commentaire)</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >
+                                <div style="color: rgb(15, 15, 15);border-style: top;background-color: rgb(183, 221, 232);"><p style="font-family: Lucida Sans Unicode;font-size: 12px;">RESPONSABLE HIERARCHIQUE</p></div>
+                                 <ul class="list-group">
+                                <li  style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise de tous les documents clients/ATC (Altran Telnet Corporation)</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Passation réalisée</li>
+                             </ul></td>
+                        
+                             <td style="padding: 0%;"><textarea disabled placeholder="commentaire" style="width:100%;height: 101px;resize: none;"  rows="5"></textarea></td>
+                           
+                        </tr>
+                        <tr>
+                            <td>
+                                 <div style="color: rgb(15, 15, 15);border-style: top;background-color: rgb(183, 221, 232);"><p style="font-family: Lucida Sans Unicode;font-size: 12px;" >IT</p></div>
+                                <ul class="list-group">
+
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise du matériel Informatique de ATC</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise du téléphone fixe</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise du Badge ATC</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled  class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Conformité n° de série du matériel</li>
+                              
+                             </ul></td>
+                             <td style="padding: 0%;"><textarea disabled placeholder="commentaire" style="width:100%;height: 170px;resize: none;"  rows="5"></textarea></td>
+
+                           
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="color: rgb(15, 15, 15);border-style: top;background-color: rgb(183, 221, 232);"><p style="font-family: Lucida Sans Unicode;font-size: 12px;">RH</p></div>
+                                <ul class="list-group">
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Formation Externe</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Immersion client</li>
+
+                             </ul></td>
+                             <td style="padding: 0%;"><textarea disabled placeholder="commentaire" style="width:100%;height: 102px;resize: none;"  rows="5"></textarea></td>
+
+                           
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="color: rgb(15, 15, 15);border-style: top;background-color: rgb(183, 221, 232);"><p style="font-family: Lucida Sans Unicode;font-size: 12px;">FINANCES</p></div>
+                                <ul class="list-group">
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Note de frais régularisée</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Avance de frais en cours à déduire du STC</li>
+
+                             </ul></td>
+                             <td style="padding: 0%;"><textarea disabled placeholder="commentaire" style="width:100%;height: 102px;resize: none;"  rows="5"></textarea></td>
+
+                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="color: rgb(15, 15, 15);border-style: top;background-color:rgb(183, 221, 232);"><p style="font-family: Lucida Sans Unicode;font-size: 12px;">AMG</p></div>
+                                <ul class="list-group">
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise des clés ( Bureau, casier, etc.)</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise téléphone portable/carte SIM/code PIN</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise carte carburant</li>
+                                <li style="font-family: Lucida Sans Unicode;font-size: 12px;" class="list-group-item"> <input disabled class="form-check-input me-1" type="checkbox" value="" aria-label="..."> Remise voiture</li>
+
+                             </ul></td>
+                             <td style="padding: 0%;"><textarea disabled placeholder="commentaire" style="width:100%;height: 170px;resize: none;"  rows="5"></textarea></td>
+
+                            
+                        </tr>
+                     
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+                     
+                   
+                     
+            
+                    <p style="font-family: Lucida Sans Unicode;font-size: 12px; position: relative;margin-left: 45px; padding-right: 55px;">Votre solde de tout compte (STC) vous sera remis contre remise de cette fiche signée et accompagnée des courriers
+                         / emails attestant la régularisation de votre compte.</p>
+                         <div style="background-color: rgb(183, 221, 232);width: 300px;height: 150px;" class="signature-container">
+                            <signature-pad  [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                          </div>
+                          
+                          <div class="buttons">
+                            <button (click)="clearSignature()">Clear signature pad</button>
+                            
+                          </div>
+                          
+                          
+                         <div class="row mb-3">
+                         
+                        <div class="col-sm-10"> <button style="position: relative;left: 670px;background-color:rgb(75,172,198);" type="submit" class="btn btn-primary">Submit Form</button></div>
+                         <p></p>
+                         <p></p>
+                         <label style="color: rgb(67,200,203);font-family: Trebuchet MS;font-size: 11px;position: relative;left: 90px;" for="validationCustom01" class="form-label">ATC Use Only<label style="position: relative;left: 420px;color:rgb(166, 166, 166);font-family: Lucida Sans Unicode;font-size: 12px;" for="validationCustom02" class="form-label">COM_TMP_GRH_022_FR-06</label></label>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+          
+       </div>
+    </section>
+ </main>

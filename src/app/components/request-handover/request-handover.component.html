@@ -1,0 +1,159 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Asset Handover Form</h1>
+      <nav>
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+            <li class="breadcrumb-item">Asset Handover Form</li>
+            <li class="breadcrumb-item active">Request</li>
+         </ol>
+      </nav>
+   </div>
+   <section class="section" >
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="card">
+               <div class="card-body">
+                   <div> <img style="width: 290px;position: relative;margin-left: 590px;" src="assets/img/Image2.png" alt=""></div>
+                  <h5 style="text-align: center;font-family:Verdana;font-weight: 700;font-size: 24px;color: rgb(79,129,183);" class="card-title">Asset Handover Form</h5>
+                  <p style="font-family: Arial;font-size: 13px;color: #000;">ATC company entrusts to Mr/Mrs, subsequently referred to as « employee »</p>
+                  <form  [formGroup]="productform" (ngSubmit)="addDemande()">
+                     <div class="row mb-3">
+                        <label 
+
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-2 col-form-label">Name :
+                        <label  name="nom" style="font-family: Arial;font-size: 13px;position: relative;left: 100px;" class="col-sm-14">{{demandes?.user.username}}</label></label>
+                     </div>
+
+                  
+
+                     <div  class="row mb-3">
+                        <label style="font-family: Arial;font-size: 13px;" for="inputEmail" class="col-sm-2 col-form-label">Surname :
+                        <label style="font-family: Arial;font-size: 13px;position: relative; left: 80px;" class="col-sm-14">{{demandes?.user.prenom}}</label></label>
+                     </div>
+                     <div style="font-family: Arial;font-size: 13px;" class="row mb-3">
+                       <label 
+
+                       style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-10 col-form-label">Department :
+                       <label  name="nom" style="font-family: Arial;font-size: 13px;position: relative;left: 65px;" class="col-sm-14">{{demandes?.user.departement}}</label></label>
+                    </div>
+                    
+                     <div class="row mb-3">
+                        <label style="font-family: Arial;font-size: 13px;" for="inputDate" class="col-sm-2 col-form-label">Asset allocation date</label>
+                        <div class="col-sm-10"> <input formControlName="date" style="font-family: Arial;font-size: 13px;width: 180px;" name="date"  type="date" class="form-control"></div>
+                     </div>
+                    
+                    <fieldset class="row mb-3">
+                       <legend   style="font-family: Arial;font-size: 13px;" class="col-form-label col-sm-2 pt-0">Allocation motive</legend>
+                       <div  type="radio" class="col-sm-10">
+                           <div  class="form-check"> <input formControlName="allocation_motive"  class="form-check-input" type="radio"  id="gridRadios1" value="Integration" checked> <label style="font-family: Arial;font-size: 13px;" class="form-check-label" for="gridRadios1"> Integration </label></div>
+                          <div class="form-check"> <input formControlName="allocation_motive" class="form-check-input" type="radio"  id="gridRadios2" value="Additional allocation "> <label style="font-family: Arial;font-size: 13px;" class="form-check-label" for="gridRadios2"> Additional allocation </label></div>
+   
+                       </div>
+                    </fieldset>
+                   
+              
+                    <p style="font-family: Arial;font-size: 13px;color: #000;">The Following asset :</p>
+
+                    <table  formArrayName="materiel" style=" border:1px solid rgb(230, 230, 230);border-radius: 15px;" class="table-bordered border-primary">
+                       <thead  style="background-color:rgb(75,172,198);">
+                         <tr style="background-color:rgb(75,172,198);">
+                           <td style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;"class="tdBorderEmail"><label>Equipment
+                               (C.U, Screen,
+                               keyboard,
+                               telephone...</label></td>
+                           <td style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;" class="tdBorderEmail"><label>MODEl
+                               (For instance :
+                               optiplex3040, E2417,
+                               Samsung...)</label></td>
+                           <td style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;" class="tdBorderEmail"><label>SERVICE TAG / SERIAL
+                               NUMBER (S/N)</label></td>
+                           <td style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;" class="tdBorderEmail"><label>Comments</label></td>
+                           
+                         </tr>
+                       </thead>
+                      
+                       <tbody  >
+                        
+                           <tr  *ngFor="let item of materiels.controls;let i=index" [formGroupName]="i" >
+                           
+                               <td>
+                                   <select  formControlName="equipement"    name="equipement"  id="gridRadios1" value="option1" style="width:150px;height: 50px;font-family: Arial;font-size: 16px;" class="form-select" id="validationCustom04" >
+                                       <option style="font-family: Arial;font-size: 16px;"  value="">Choose...</option>
+                                       <option   value="C.U"  for="gridRadios1"  style="font-family: Arial;font-size: 16px;">C.U</option>
+                                       <option  value="Screen"  for="gridRadios1"   style="font-family: Arial;font-size: 16px;">Screen</option>
+                                       <option  value="keyboard"  for="gridRadios1"  style="font-family: Arial;font-size: 16px;">keyboard</option>
+                                       <option  value="telephone"  for="gridRadios1"  style="font-family: Arial;font-size: 16px;">telephone</option>
+                                     </select>
+                               </td>
+                               <td>
+                                   <select  formControlName="model" name="model" id="gridRadios2" value="option2" style="width: 150px;height: 50px;"class="form-select" id="validationCustom04" >
+                                       <option  value="">Choose...</option>
+                                       <option value="optiplex3040" for="gridRadios2">optiplex3040</option>
+                                       <option>E2417</option>
+                                       <option >Samsung</option>
+                                       
+                                     </select>
+                               </td>
+                               <td for="gridRadios1"  style="width:50%;height: 50px;"><input formControlName="serial"  name="serial" id="gridRadios1"  placeholder="SERVICE TAG" style="width:100%;height: 50px;" type="text"></td>
+                               <td style="width:50%;height: 50px;"><input formControlName="comment"  name="comment" id="gridRadios1"  placeholder="Comments" style="width:100%;height: 50px;" type="text"></td>
+                             </tr>
+                             <tr>
+                              
+                               
+                             </tr>
+                         
+                        
+                       </tbody>
+                       
+                     </table>
+                     <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <a  class="bi bi-plus" (click)="addRow()" ></a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                    
+                  
+                    
+           <p style="font-family: Arial;font-size: 13px;color: #000;padding-left: 35px;">This asset remains the property of the company</p>
+           <p style="font-family: Arial;font-size: 13px;color: #000;padding-left: 35px;" > It is agreed that the employee shall not use this asset for any other purposes than professional purposes without the
+               express and prior authorization of the company.</p>
+               <p style="font-family: Arial;font-size: 13px;color: #000;padding-left: 35px;"> The employee commits to return the integrality of the said entrusted asset at the time of his departure of the company
+                   regardless of the reason for departure.</p>
+                   <p style="font-family: Arial;font-size: 13px;color: #000;padding-left: 35px;">   In case of theft, I commit myself to file a complaint to the nearest police station and forward, within 48h, the original of
+                       the complaint to the IT department.</p>
+                   <p style="font-family: Arial;font-size: 13px;color: #000;padding-left: 35px;">
+                   
+                   
+                 
+                    In case of loss, I commit myself to inform by mail, without delay, the IT service or the General Services.</p>
+                    <p style="font-weight: 700;">Signature of the employee</p>
+                    <div  class="col-md-6">
+                        <div  style="background-color: rgb(183, 221, 232);width: 300px;height: 150px;" class="signature-container">
+                            <signature-pad  [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                          </div>
+                          
+                          <div class="buttons">
+                            <button (click)="clearSignature()">Clear signature pad</button>
+                            
+                          </div>    
+                    </div> 
+                    <div class="row mb-3">
+                        
+                        <div class="col-sm-10"> <button  style="position: relative;left: 700px;background-color:rgb(75,172,198)" type="submit" class="btn btn-primary">Submit Form</button></div>
+                        
+                        <p></p>
+                        <p></p>
+                       
+                        <label style="color: rgb(166, 166, 166);font-family: Trebuchet MS;font-size: 11px;position: relative;left: 90px;" for="validationCustom01" class="form-label">Company Confidential<label style="position: relative;left: 430px;color:rgb(166, 166, 166);font-family: Lucida Sans Unicode;font-size: 12px;" for="validationCustom02" class="form-label">COM_TMP_IT_005_EN – 03</label></label>
+                       </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+   </section>
+</main>

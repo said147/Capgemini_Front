@@ -1,0 +1,133 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Return Voucher</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+             <li class="breadcrumb-item">Requests</li>
+             <li class="breadcrumb-item active">Return Voucher </li>
+          </ol>
+       </nav>
+    </div>
+    <section *ngFor="let n of demandes" class="section">
+       <div class="row">
+          <div class="col-lg-6">
+             <div class="card">
+                <div class="card-body">
+                    <div> <img style="width: 290px;position: relative;margin-left: 50px;" src="assets/img/Image2.png" alt=""></div>
+                    <h5 style="text-align: center;font-family:Verdana;font-weight: 700;font-size: 37px;color: rgb(79,129,183);" class="card-title">IT Asset return voucher</h5>
+                  
+                   
+                   <form  >
+                      <div><label style="font-size: 13px;font-family:Arial;padding-left: 60px;" for="validationCustom01" class="form-label">I,the undersigned, Mr / Mrs
+                        <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label">{{n.user.username}} {{n.user.prenom}} </label>
+                        <label style="position: relative;left: 39px; font-family:Arial;font-size: 13px">
+                            working as
+                        </label>
+                    </label></div>
+                      
+                   <div> <label style="font-size: 13px;font-family:Arial;padding-left: 60px;font-weight: 700;" for="validationCustom01" class="form-label">{{n.user.departement}}
+                    <label style="position: relative;left: 8px;font-weight: normal;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label">Within the ATC company confirm that I benefited from the</label>
+                    
+                </label></div>  
+                   
+                      <div style="font-size: 13px;font-family:Arial;padding-left: 60px;">No longer needing to use it, I return it today:</div>
+                      
+                    
+                    
+               
+                   
+<ng-container >
+    <div class="container">
+        <div  class="card-table">
+            <div style="padding-top: 50px;" class="cart-product">
+                <table   style="padding-top: 50px;" class="table-bordered border-primary">
+                    <thead style="background-color:rgb(75,172,198);">
+                        <tr >
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">ASSET
+                                (C.U, Screen,
+                                keyboard,
+                                telephone...</th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">MODEl
+                                (For instance :
+                               optiplex3040, E2417,
+                               Samsung...)</th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">S/N</th>
+                                <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Low level
+                                    formatting done
+                                    </th>
+                                    <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Comments</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let k of n?.materielRetour
+                        " >
+                            <td>{{k?.equipement}}</td>
+                            <td>{{k?.model}}</td>
+                            <td>{{k?.serial}}</td>
+                            <td>{{k?.level}}</td>
+                            <td>{{k?.comment}}</td>
+                        </tr>
+
+
+
+                       
+
+
+                      
+                        
+                     
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
+</ng-container>
+<h5><label style="font-size: 13px;font-family:Arial;padding-left: 60px;" for="validationCustom01" class="form-label">No longer needing to use it, I return it today
+    <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02"  class="form-label"><div class="col-sm-10"></div>{{n.date_retour}}</label>
+    <label style="position: relative;left: 39px; font-family:Arial;font-size: 13px">
+        and I decline any future
+        
+    </label>
+</label></h5>
+<h5  style="font-size: 13px;font-family:Arial;padding-left: 60px;" > responsibility arising from the material.</h5>
+<h5  style="font-size: 13px;font-family:Arial;padding-left: 60px;" > Remaining available for any further information.</h5>
+
+
+ <div><label style="font-size: 13px;font-family:Arial;padding-left: 60px;" for="validationCustom01" class="form-label">Reason for returning the equipment:
+    <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label"> {{n.reason}}</label>
+    
+</label></div>
+ <div><label style="font-size: 13px;font-family:Arial;padding-left: 60px;" for="validationCustom01" class="form-label">The material has been verified by:
+    <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label"> {{n.name_verified}}</label>
+    
+</label></div>
+                     
+<p style="font-weight: 700;">Signature of the Checker</p>               
+<div  class="row mb-3">
+    <img style="width: 400px;" src='{{ n?.dataURLChecker}}' />
+    
+  </div>
+  <p style="font-weight: 700;">Signature of the employee</p>               
+  <div  class="row mb-3">
+      <img style="width: 400px;" src='{{ n?.dataURLEmploye}}' />
+      
+    </div>
+                  
+                      <div class="row mb-3">
+                         
+                         
+                         <p></p>
+                         <p></p>
+                         <label style="color: rgb(67,200,203);font-family: Trebuchet MS;font-size: 11px;position: relative;left: 90px;" for="validationCustom01" class="form-label">ATC Use Only<label style="position: relative;left: 430px;color:rgb(166, 166, 166);font-family: Lucida Sans Unicode;font-size: 12px;" for="validationCustom02" class="form-label">COM_TMP_IT_011_EN-03</label></label>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+          
+       </div>
+    </section>
+ </main>

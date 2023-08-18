@@ -1,0 +1,163 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>ASSET CHANGE FORM</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Requests</li>
+             <li class="breadcrumb-item active">ASSET CHANGE FORM </li>
+          </ol>
+       </nav>
+    </div>
+    <section *ngFor="let n of demandes" class="section">
+       <div class="row">
+          <div class="col-lg-6">
+             <div class="card">
+                <div class="card-body">
+                    <div> <img style="width: 290px;position: relative;margin-left: 590px;" src="assets/img/Image2.png" alt=""></div>
+                   <h5 style="text-align: center;font-family:Verdana;font-weight: 700;font-size: 24px;color: rgb(79,129,183);" class="card-title">ASSET CHANGE FORM</h5>
+                   <p style="font-family: Arial;font-size: 13px;color: #000;">ATC entrusts to Mr/Mrs</p>
+                   <form  >
+                      <div class="row mb-3">
+                         <label 
+
+                         style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-2 col-form-label">Name:
+                         <label style="font-family: Arial;font-size: 13px;position: relative;left: 14px;" class="col-sm-14"> {{n.user.username}}</label></label>
+                      </div>
+
+                   
+
+                      <div class="row mb-3">
+                         <label style="font-family: Arial;font-size: 13px;" for="inputEmail" class="col-sm-2 col-form-label">Surname:
+                         <label  style="font-family: Arial;font-size: 13px;position: relative; left: 14px;" class="col-sm-14"> {{n?.user.prenom}}</label></label>
+                      </div>
+                      <div style="font-family: Arial;font-size: 13px;" class="row mb-3">
+                        <label 
+
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-10 col-form-label">Department :
+                        <label  name="nom" style="font-family: Arial;font-size: 13px;position: relative;left: 14px;" class="col-sm-14">{{n?.user.departement}}</label></label>
+                     </div>
+                     
+                     
+                      <div style="font-family: Arial;font-size: 13px;" class="row mb-3">
+                        <label 
+ 
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-10 col-form-label">Change date :
+                        <label  name="nom" style="font-family: Arial;font-size: 13px;position: relative;left: 14px;" class="col-sm-14">{{n?.date}}</label></label>
+                     </div>
+               
+                     <p style="font-weight: 700;text-decoration : underline;font-family: Arial;font-size: 16px;color: #000;">The new asset :</p>
+<ng-container >
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table   style=" border:1px solid rgb(230, 230, 230);border-radius: 15px;" class="table-bordered border-primary">
+                    <thead style="background-color:rgb(75,172,198);">
+                        <tr >
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Equipment type</th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Model</th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Service Tag / SN</th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Low level formatting
+                                done (Yes / No / NA)</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let k of n?.materielChangeNew" >
+                            <td>{{k?.equipement}}</td>
+                            <td>{{k?.model}}</td>
+                            <td>{{k?.serial}}</td>
+                            <td>{{k?.level}}</td>
+                        </tr>
+                      
+                       
+                     
+                    </tbody>
+                </table>
+                
+              
+                <p style="font-weight: 700;text-decoration : underline;font-family: Arial;font-size: 16px;color: #000;padding-top: 8px;">Ancient asset :</p>
+                <table   style=" border:1px solid rgb(230, 230, 230);border-radius: 15px;" class="table-bordered border-primary">
+                  <thead style="background-color:rgb(75,172,198);">
+                      <tr >
+                          <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Equipment type</th>
+                          <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Model</th>
+                          <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Service Tag / SN</th>
+                          <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Low level formatting
+                              done (Yes / No / NA)</th> 
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let k of n?.materielChangeAncient" >
+                        <td>{{k?.equipement}}</td>
+                        <td>{{k?.model}}</td>
+                        <td>{{k?.serial}}</td>
+                        <td>{{k?.level}}</td>
+                    </tr>
+                     
+                   
+                  </tbody>
+              </table>
+              
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+                     
+                   
+                     
+            <p style="font-family: Arial;font-size: 13px;padding-left: 30px;">This asset remains the property of the company.</p>
+            <div><label style="font-size: 13px;font-family:Arial;padding-left: 30px;" for="validationCustom01" class="form-label">It is agreed that Mr/Mrs
+                <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label"> {{n?.user.username}}  {{n?.user.prenom}}</label>
+                <label style="position: relative;left: 39px; font-family:Arial;font-size: 13px">
+                shall not use this asset for any other purposes than
+                </label>
+            </label></div>
+                <p style="font-family: Arial;font-size: 13px;padding-left: 30px;">professional purposes without the express and prior authorization of the company.</p>
+                   
+                <div><label style="font-size: 13px;font-family:Arial;padding-left: 30px;padding-top: 25px;" for="validationCustom01" class="form-label">Mr/Mrs
+                    <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label"> {{n?.user.username}}  {{n?.user.prenom}}</label>
+                    <label style="position: relative;left: 39px; font-family:Arial;font-size: 13px">
+                      is committed to return the integrality of the said entrusted asset at the time of his departure of
+                    </label>
+                </label></div>
+                    <p style="font-family: Arial;font-size: 13px;padding-left: 30px;">the company regardless of the reason for departure.</p>
+                
+                
+                    <div><label style="font-size: 13px;font-family:Arial;padding-left: 30px;padding-top: 25px;" for="validationCustom01" class="form-label">It is stated that in case of damage or loss to the said loaned asset, Mr/Mrs
+                        <label style="position: relative;left: 9px;font-weight: 700;font-size: 13px;font-family:Arial;" for="validationCustom02" class="form-label"> {{n?.user.username}}  {{n?.user.prenom}}</label>
+                        <label style="position: relative;left: 39px; font-family:Arial;font-size: 13px">
+                           may be required to
+                        </label>
+                    </label></div>
+                        <p style="font-family: Arial;font-size: 13px;padding-left: 30px;">reimburse to ATC the value of this asset.</p>     
+                
+                
+                
+                        <p style="font-weight: 700;">Signature of the concerned</p>
+                        <div  class="row mb-3">
+                            <img style="width: 400px;" src='{{ n?.dataURLEmploye}}' />
+                            
+                          </div>
+                
+                
+                
+                
+       
+                      <div class="row mb-3">
+                         
+
+                        
+                         <p></p>
+                         <p></p>
+                        
+                         <label style="color: rgb(67,200,203);font-family: Trebuchet MS;font-size: 11px;position: relative;left: 90px;" for="validationCustom01" class="form-label">ATC Use Only<label style="position: relative;left: 420px;color:rgb(166, 166, 166);font-family: Lucida Sans Unicode;font-size: 12px;" for="validationCustom02" class="form-label">COM_TMP_IT_004_EN - 02</label></label>
+                        </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+          
+       </div>
+    </section>
+ </main>

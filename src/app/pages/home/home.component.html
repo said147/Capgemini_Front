@@ -1,0 +1,185 @@
+<main id="main" class="main">
+   <div class="container" *ngIf="currentUser; else loggedOut">
+  <header  *ngIf="showUserBoard"  class="jumbotron">
+   <div>
+      <img style="height: 200px;width: 1100px;" src="https://www.groovypost.com/wp-content/uploads/2021/06/windows-11-teams-featured.jpg">
+   </div>
+   <h1 ></h1>
+   <div class="row">
+      <div class="col-lg-8">
+         <div class="row">
+           
+            <div class="col-xxl-4 col-md-6">
+               <div class="card info-card sales-card">
+                  
+                  <div class="card-body">
+                     <h5 class="card-title">Tickets Handover<span></span></h5>
+                     <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-journal-text"></i></div>
+                        <div class="ps-3">
+                           <h6>{{e}}</h6>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div style="position: relative;left: 200px;height: 150px;" class="col-xxl-4 col-md-6">
+               <div class="card info-card revenue-card">
+                
+                  <div class="card-body">
+                     <h5 class="card-title">Tickets Change <span></span></h5>
+                     <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-layout-text-window-reverse"></i></div>
+                        <div class="ps-3">
+                           <h6>{{f}}</h6>
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div style="position: relative;top: 148px;right: 50px;height: 70px;" class="col-xxl-4 col-md-6">
+              <div class="card info-card customers-card">
+               
+                 <div class="card-body">
+                    <h5 class="card-title">Tickets Return  <span> </span></h5>
+                    <div class="d-flex align-items-center">
+                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-menu-button-wide"></i></div>
+                       <div class="ps-3">
+                          <h6>{{r}}</h6>
+                         
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+            
+            
+            
+         </div>
+      
+         <div class="col-xxl-4 col-xl-12">
+           <div class="card info-card customers-card">
+             
+              <div class="card-body">
+                 <h5 class="card-title">Requests Telework <span></span></h5>
+                 <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-card-heading"></i></div>
+                    <div class="ps-3">
+                       <h6>{{g}}</h6>
+                      
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        
+        
+        
+     
+   
+        
+            
+         
+        
+      
+      </div>
+   </div>
+  </header>
+  
+  <section  *ngIf="showAdminBoard||showQualiteBoard" class="section dashboard">
+   <div>
+      <img style="height: 200px;width: 1100px;" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbXB1dGVyJTIwdXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80">
+   </div>
+    <div class="row">
+       <div class="col-lg-8">
+          <div class="row">
+            
+             <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card">
+                   
+                   <div class="card-body">
+                      <h5 class="card-title">Requests <span></span></h5>
+                      <div class="d-flex align-items-center">
+                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-box-arrow-in-right"></i></div>
+                         <div class="ps-3">
+                            <h6>{{a}}</h6>
+                            
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div style="position: relative;left: 200px;" class="col-xxl-4 col-md-6">
+                <div class="card info-card revenue-card">
+                 
+                   <div class="card-body">
+                      <h5 class="card-title">Requests Waiting <span></span></h5>
+                      <div class="d-flex align-items-center">
+                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-exclamation-triangle"></i></div>
+                         <div class="ps-3">
+                            <h6>{{c}}</h6>
+                           
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div style="position: relative;top: 189px;right: 50px;" class="col-xxl-4 col-md-6">
+               <div class="card info-card customers-card">
+                
+                  <div class="card-body">
+                     <h5 class="card-title">Requests Closed <span></span></h5>
+                     <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-file-earmark-lock"></i></div>
+                        <div class="ps-3">
+                           <h6>{{b}}</h6>
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+             
+             
+             
+          </div>
+       
+          <div class="col-xxl-4 col-xl-12">
+            <div class="card info-card customers-card">
+              
+               <div class="card-body">
+                  <h5 class="card-title">Requests In progress<span></span></h5>
+                  <div class="d-flex align-items-center">
+                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-file-earmark-text-fill"></i></div>
+                     <div class="ps-3">
+                        <h6>{{d}}</h6>
+                       
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         
+         
+      
+    
+         
+             
+          
+         
+       
+       </div>
+    </div>
+ </section>
+  
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
+
+    
+ </main>

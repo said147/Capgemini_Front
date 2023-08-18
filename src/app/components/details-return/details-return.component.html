@@ -1,0 +1,127 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Data Tables</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Tables</li>
+             <li class="breadcrumb-item active">Data</li>
+          </ol>
+       </nav>
+    </div>
+
+    
+
+
+
+
+
+    <section class="section">
+       <div  class="row">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="card-body">
+                  
+                
+                   <h5 class="card-title">Request details</h5>
+                   <div  class="row">
+                      <div class="col-lg-3 col-md-4 label ">Name</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.user.username}}</div>
+                   </div>
+                   <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Surname</div>
+                    <div class="col-lg-9 col-md-8">{{demandes?.user.prenom}}</div>
+                 </div>
+                   <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Department</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.user.departement}}</div>
+                   </div>
+                   <div  class="row">
+                      <div class="col-lg-3 col-md-4 label">Return date</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.date_retour}}</div>
+                   </div>
+                   <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Reason for returning</div>
+                      <div class="col-lg-9 col-md-8">{{demandes?.reason}}</div>
+                   </div>
+                   <div class="row">
+                     <div class="col-lg-3 col-md-4 label">Name verified</div>
+                     <div class="col-lg-9 col-md-8">{{username}} {{prenom}}</div>
+                  </div>
+                   
+
+                   <p>The Following asset :</p>
+                   <div class="card-body">
+                  
+                    <table class="table table-hover">
+                       <thead>
+                          <tr>
+                             
+                             <th scope="col">Equipment
+                               </th>
+                             <th scope="col">MODEl
+                               </th>
+                             <th scope="col">SERVICE TAG / SERIAL
+                                NUMBER (S/N)</th>
+                                <th scope="col">Low level</th>
+                                
+                             <th scope="col">Comments</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                         
+                          <tr  *ngFor="let n of demandes?.materielRetour">
+                             
+                             <td>{{n?.equipement}}</td>
+                             <td>{{n?.model}}</td>
+                             <td>{{n?.serial}}</td>
+                             <td>{{n?.level}}</td>
+                             <td>{{n?.comment}}</td>
+                          </tr>
+                          
+                          
+                       </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">  <button  [disabled]="demandes.status == 'En cours'||demandes?.status=='Closed'" type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered"> En cours</button> <button [disabled]="demandes.status == 'Waiting'||demandes.status=='Closed'"  type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#verticalycentereds"> Close</button></div>
+                  
+                  <div class="modal fade" id="verticalycentered" tabindex="-1">
+                     <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title">Confirmation</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body"> are you sure to confirm request</div>
+                           <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button> <button (click)="updateProvider()" type="button"  class="btn btn-primary">Yes</button></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal fade" id="verticalycentereds" tabindex="-1">
+                     <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title">Closing</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body"> are you sure to close request</div>
+                           <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button> <button (click)="updatestatus()" type="button" class="btn btn-primary">Yes</button></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                </div>
+             </div>
+          </div>
+       
+    </section>
+
+
+
+
+
+
+
+
+    
+ </main>

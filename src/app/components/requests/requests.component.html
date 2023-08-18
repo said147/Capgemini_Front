@@ -1,0 +1,96 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>List of Requests</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Requests</li>
+             <li class="breadcrumb-item active">list of requests</li>
+          </ol>
+       </nav>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <section class="section">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">List of Requests</h5>
+                  <div class="search">
+                    
+                     <input class="searchTerm" type="text"[(ngModel)]="motCle" 
+                    />
+                    <button class="bi bi-search"(click)="chercher()"></button>
+                    <button class="bi bi-x"(click)="cancal()"></button>
+                    
+                   </div>
+                   
+                  <table class="table table-sm">
+                     <thead>
+                        <tr>
+                         
+                           <th scope="col">Full Name</th>
+                           <th scope="col">Department</th>
+                           <th scope="col">Type of request</th>
+                           <th scope="col">Date of request</th>
+                           <th scope="col">Status</th>
+                           <th scope="col">description</th>
+                          
+                           
+                           
+                          
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr  *ngFor=" let k of Tiquetes  | paginate: { itemsPerPage: 8, currentPage: p } ">
+                          
+                           <td >{{k.user.username}} {{k.user.prenom}}</td>
+                           <td >{{k.user.departement}}</td>
+                           <td>{{k.type_Request}}</td>
+                           
+                           <td>{{k.date}}</td>
+                           <td>{{k.status}}</td>
+                           <td  > <p class="card-text"><a   routerLink="details/{{ k.id_tiquete}}"  class="btn btn-primary" >Details</a></p></td>
+                           
+                        </tr>
+                       
+                       
+                        
+                  
+                     </tbody>
+                  </table>
+                  <div><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
+                  
+                  
+               </div>
+            </div>
+         </div>
+         
+      </div>
+
+
+
+     
+   </section>
+ </main>

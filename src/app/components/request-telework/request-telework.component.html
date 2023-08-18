@@ -1,0 +1,192 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Engagement Telework</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Engagement Telework</li>
+             <li class="breadcrumb-item active">Request</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+       <div class="row">
+          <div class="col-lg-6">
+             <div class="card">
+                <div class="card-body">
+                   
+                   <div> <img style="width: 290px;position: relative;margin-left: 50px;" src="assets/img/Image2.png" alt=""></div>
+                   <h5 style="text-align: center;font-family:Lucida Bright;font-weight: 700;font-size: 22px;color: rgb(75,172,198);" class="card-title">Engagement pour activation du Télétravail</h5>
+                   <p style="font-family: Arial;font-size: 13px;">Je soussigné</p>
+                   <form  [formGroup]="productform" (ngSubmit)="addDemandeTelework()">
+                    <div class="row mb-3">
+                        <label 
+
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-2 col-form-label">Name:
+                        <label style="font-family: Arial;font-size: 13px;position: relative;left: 110px;" class="col-sm-14"> {{username}}</label></label>
+                     </div>
+                     <div class="row mb-3">
+                        <label 
+
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-2 col-form-label">Prénom:
+                        <label style="font-family: Arial;font-size: 13px;position: relative;left: 100px;" class="col-sm-14"> {{prenom}}</label></label>
+                     </div>
+                     <div style="font-family: Arial;font-size: 13px;" class="row mb-3">
+                        <label 
+ 
+                        style="font-family: Arial;font-size: 13px;" for="inputText" class="col-sm-10 col-form-label">Department :
+                        <label  name="nom" style="font-family: Arial;font-size: 13px;position: relative;left: 70px;" class="col-sm-14">{{departement}}</label></label>
+                     </div>
+                      
+                    
+                      <div class="row mb-3">
+                         <label style="font-family: Arial;font-size: 13px;" for="inputDate" class="col-sm-2 col-form-label">Date d’activation du télétravail</label>
+                         <div class="col-sm-10"> <input formControlName="date" style="font-family: Arial;font-size: 13px;width: 170px;" type="date" class="form-control"></div>
+                      </div>
+                     
+                     <p style="font-family: Arial;font-size: 15px;">Déclare avoir pris connaissance des règles d’activation de télétravail ATC, mentionnées
+                        dans ce document et je m’engage à m’y conformer scrupuleusement.</p>
+               
+                     <p style="font-family: Arial;font-size: 15px;">Les équipements mis à ma disposition par ATC sont les suivant:</p>
+<ng-container >
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table formArrayName="materielTelework"  class="table-bordered border-primary">
+                    <thead style="background-color:rgb(75,172,198);">
+                        <tr >
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">Equipment
+                                (C.U, Screen,
+                                keyboard,
+                                telephone... </th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">MODEl
+                                (For instance :
+                                optiplex3040, E2417,
+                                Samsung...)  </th>
+                            <th style="font-family: Arial;font-size: 16px;color:rgb(255,255,255);font-weight: 700;text-align: center;">SERVICE TAG / SERIAL
+                                NUMBER (S/N)</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of materiels.controls;let i=index" [formGroupName]="i">
+                            <td>
+                                <select  formControlName="equipement"    name="equipement"  id="gridRadios1" value="option1" style="width:250px;height: 50px;font-family: Arial;font-size: 16px;" class="form-select" id="validationCustom04" >
+                                    <option style="font-family: Arial;font-size: 16px;"  value="">Choose...</option>
+                                    <option   value="C.U"  for="gridRadios1"  style="font-family: Arial;font-size: 16px;">C.U</option>
+                                    <option  value="Screen"  for="gridRadios1"   style="font-family: Arial;font-size: 16px;">Screen</option>
+                                    <option  value="keyboard"  for="gridRadios1"  style="font-family: Arial;font-size: 16px;">keyboard</option>
+                                    <option  value="telephone"  for="gridRadios1"  style="font-family: Arial;font-size: 16px;">telephone</option>
+                                  </select>
+                            </td>
+                            <td><select  formControlName="model" name="model" id="gridRadios2" value="option2" style="width: 150px;height: 50px;"class="form-select" id="validationCustom04" >
+                                <option  value="">Choose...</option>
+                                <option value="optiplex3040" for="gridRadios2">optiplex3040</option>
+                                <option>E2417</option>
+                                <option >Samsung</option>
+                                
+                              </select>
+                            </td>
+                              <td style="width:50%;height: 50px;"><input formControlName="serial" placeholder="SERVICE TAG" style="width:100%;height: 50px;" type="text"></td>
+                           
+                        </tr>
+                       
+                     
+                    </tbody>
+                </table>
+                <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <a  class="bi bi-plus" (click)="addRow()" ></a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+                     
+                  
+                 <div style="font-family: Arial;font-size: 15px;font-weight: 700;padding-top: 30px;">Règles d’activation de télétravail ATC</div>    
+            
+                 <h1 style="font-family: Arial;font-size: 15px;padding-left: 35px;">1- Le passage au télétravail ne sera pas considéré comme étant un changement du contrat
+                    de travail ou sa novation.</h1>
+                    <h2 style="font-family: Arial;font-size: 15px;padding-left: 35px;"> 2- La période de télétravail débutera le  </h2>  <span style="font-family: Arial;font-size: 15px;padding-left: 35px;">{{productform.value.date}}</span><h2 style="font-family: Arial;font-size: 15px;padding-left: 35px;"> à l’adresse
+                    </h2 >   
+                    
+                        <h1 style="font-family: Arial;font-size: 15px;padding-left: 35px;">
+
+                            <textarea style="font-family: Arial;font-size: 15px;" formControlName="adresse" matInput placeholder="Ex. Ariana-Tunis">1600 Amphitheatre Pkwy</textarea> 
+                        </h1>    
+                            
+                          
+
+                       <h3 style="font-family: Arial;font-size: 15px;padding-left: 35px;"> et prendra fin à l’initiative de l’employeur par simple mail adressé à l’employé. A cet effet,
+                        tout refus de l’employé de regagner son poste au siège social de la société sera considéré
+                        comme étant un abandon de poste.</h3>
+                        <h3 style="font-family: Arial;font-size: 15px;padding-left: 35px;"> 3- L’employé est tenu à respecter les règles de sécurité de l’information d’ATC et les
+                            engagements de sécurité spécifiques pouvant avoir été pris par ATC relatifs à sa mission et
+                            qui lui sont communiqués. En particulier toute clause de confidentialité pouvant figurer dans
+                            les accords contractuels entre ATC et le client.</h3>
+                            <h4 style="font-family: Arial;font-size: 15px;padding-left: 35px;">  4- L’employé est tenu d’indiquer avec précision le lieu de télétravail qui sera considéré
+                                comme étant le lieu habituel de son travail. Tout changement ne peut être effectué sans
+                                l’accord express et écrit de la direction.</h4>
+                                <h5 style="font-family: Arial;font-size: 15px;padding-left: 35px;">5- L’employé sera tenu de respecter les horaires de travail de l’entreprise pendant la période
+                                    de télétravail comme s’il les accomplissait au siège social de la société.</h5>
+                    
+                    <h6 style="font-family: Arial;font-size: 15px;padding-left: 35px;">6- L’employé est tenu d’aménager un espace de travail respectant les principes d’ergonomie
+                        visuelle et posturale (un bureau de travail, une chaise confortable, une bonne luminosité et un niveau de bruit bas) afin d’éviter la fatigue liée à des inadaptations et génératrices
+                        d’accidents.</h6>
+                        <h6 style="font-family: Arial;font-size: 15px;padding-left: 35px;">  7- L’employé doit être joignable par les outils mis à disposition dans les horaires de travail.</h6>
+                    <h6 style="font-family: Arial;font-size: 15px;padding-left: 35px;">    7- L’employé doit être joignable par les outils mis à disposition dans les horaires de travail.</h6>
+                    <h6 style="font-family: Arial;font-size: 15px;padding-left: 35px;"> 8- L’employé ne peut quitter le lieu de son télétravail sauf autorisation expresse et écrite de
+                        son supérieur hiérarchique.</h6>
+                    <h6 style="font-family: Arial;font-size: 15px;padding-left: 35px;">   9- L’employé bénéficie de tous les droits sociaux notamment celles relatives aux accidents
+                        de travail tant qu’il respecte les modalités d’exécution du télétravail, surtout celle relative au
+                        lieu.</h6>
+                    <h6 style="font-family: Arial;font-size: 15px;padding-left: 35px;">10- L’employé est tenu de préserver les outils mis à sa disposition (listés ci-dessus) durant
+                        toute la période de télétravail et de les utiliser uniquement dans le cadre professionnel. Il
+                        devra les restituer en bon état durant et à la fin du télétravail.</h6>
+                      <h5 style="font-family: Arial;font-size: 15px;padding-left: 35px;">
+                        11- L’employé est tenu d’informer la direction de toute contrainte ou difficulté découlant de
+                        l’exécution de sa tâche durant la période de télétravail.</h5>
+                       
+                        <div style="font-family: Arial;font-size: 15px;padding-top: 25px;">Je suis conscient que tout manquement de ma part aux engagements décrits ci-dessous engage
+                            ma responsabilité personnelle.</div>
+                     
+                            <div class="row mb-3">
+                                <label 
+        
+                                style="font-family: Arial;font-size: 15px;padding-left: 50px;" for="inputText" class="col-sm-4 col-form-label">Date :
+                                <label style="font-family: Arial;font-size: 15px;position: relative;left: 10px;" class="col-sm-15"> {{productform.value.date}}</label></label>
+                             </div>
+                     
+                             <p style="font-weight: 700;">Signature of the employee</p>
+                             <div class="col-md-6">
+                                 <div style="background-color: rgb(183, 221, 232);width: 300px;height: 150px;" class="signature-container">
+                                     <signature-pad  [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                                   </div>
+                                   
+                                   <div class="buttons">
+                                     <button (click)="clearSignature()">Clear signature pad</button>
+                                     
+                                   </div>   
+                             </div>  
+                            <div class="row mb-3">
+                         
+                         <div class="col-sm-10"> <button style="position: relative;left: 670px;background-color:rgb(75,172,198)" type="submit" class="btn btn-primary">Submit Form</button></div>
+                        
+                         <p></p>
+                         <p></p>
+                        
+                         <label style="color: rgb(67,200,203);font-family: Trebuchet MS;font-size: 11px;position: relative;left: 90px;" for="validationCustom01" class="form-label">ATC Use Only<label style="position: relative;left: 390px;color:rgb(166, 166, 166);font-family: Lucida Sans Unicode;font-size: 12px;" for="validationCustom02" class="form-label">Réf.Template COM_TMP_GRH_029_FR- 02</label></label>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+          
+       </div>
+    </section>
+ </main>
